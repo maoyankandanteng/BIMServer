@@ -1,0 +1,191 @@
+{
+  "guid": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0",
+  "success": "100%",
+  "owner": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0",
+  "startedAt": "Sun, 26 Apr 2020 22:11:38 GMT",
+  "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0",
+  "type": "design",
+  "progress": "complete",
+  "status": "success",
+  "hasThumbnail": "true",
+  "region": "US",
+  "children": [
+    {
+      "type": "folder",
+      "role": "viewable",
+      "status": "success",
+      "name": "input.rvt",
+      "hasThumbnail": "true",
+      "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0",
+      "progress": "complete",
+      "guid": "a078ada8-1d06-4914-8315-6d3fe3fe1401",
+      "properties": {},
+      "success": "100%",
+      "children": [
+        {
+          "type": "view",
+          "role": "3d",
+          "status": "success",
+          "name": "3d",
+          "progress": "complete",
+          "guid": "f56d6fdd-174f-47f1-bb04-26306b350931-000312cb",
+          "camera": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "type": "resource",
+          "role": "Autodesk.CloudPlatform.PropertyDatabase",
+          "status": "success",
+          "mime": "application/autodesk-db",
+          "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0/model.sdb",
+          "guid": "25a3765b-bfe9-45f7-99d0-88d8a424c145",
+          "size": 5869568
+        },
+        {
+          "type": "resource",
+          "role": "Autodesk.AEC.ModelData",
+          "status": "success",
+          "mime": "application/json",
+          "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0/AECModelData.json",
+          "guid": "8e567566-54c8-48dd-8d14-8c935c3307b1"
+        },
+        {
+          "type": "folder",
+          "status": "success",
+          "name": "视图",
+          "hasThumbnail": "true",
+          "progress": "complete",
+          "guid": "77252837-64c5-46b7-9527-d3148a8d5205",
+          "success": "100%",
+          "children": [
+            {
+              "type": "folder",
+              "status": "success",
+              "name": "三维视图",
+              "hasThumbnail": "true",
+              "progress": "complete",
+              "guid": "79fe0d69-d43b-4bb8-94d3-b889ef09c93c",
+              "success": "100%",
+              "children": [
+                {
+                  "type": "geometry",
+                  "role": "3d",
+                  "status": "success",
+                  "name": "3d",
+                  "hasThumbnail": "true",
+                  "progress": "complete",
+                  "guid": "cff423af-318b-46a2-b958-14a7292c3722",
+                  "success": "100%",
+                  "children": [
+                    {
+                      "type": "view",
+                      "role": "3d",
+                      "status": "success",
+                      "name": "3d",
+                      "progress": "complete",
+                      "guid": "f56d6fdd-174f-47f1-bb04-26306b350931-000312cb",
+                      "camera": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                      ]
+                    },
+                    {
+                      "type": "resource",
+                      "role": "3d",
+                      "mime": "application/autodesk-svf",
+                      "urn": "./3d.svf",
+                      "progress": "graphics",
+                      "guid": "3c0ef2ec-2eb0-43ee-8ce3-691632219a33",
+                      "size": 72450432
+                    }
+                  ],
+                  "size": 72450432,
+                  "viewableID": "f56d6fdd-174f-47f1-bb04-26306b350931-000312cb"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "status": "success",
+          "name": "图纸",
+          "hasThumbnail": "true",
+          "progress": "complete",
+          "guid": "2307f345-2719-4cb8-8d4c-d91b44c214d2",
+          "success": "100%",
+          "children": [
+            {
+              "type": "geometry",
+              "role": "2d",
+              "status": "success",
+              "name": "A101 - 未命名",
+              "hasThumbnail": "true",
+              "progress": "complete",
+              "guid": "2fd1c920-0957-4f2e-95f8-96e81a7104ca-002aef87",
+              "success": "100%",
+              "children": [
+                {
+                  "type": "resource",
+                  "role": "graphics",
+                  "status": "success",
+                  "mime": "application/autodesk-f2d",
+                  "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0/f2d_图纸__A101_-_未命名/primaryGraphics.f2d",
+                  "guid": "317e7c65-b126-4497-8cba-deb2af364dd8",
+                  "size": 222611
+                }
+              ],
+              "size": 222611,
+              "phaseNames": "",
+              "order": 0,
+              "viewableID": "2fd1c920-0957-4f2e-95f8-96e81a7104ca-002aef87",
+              "placement": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                4.9212598425196861,
+                1.0
+              ]
+            }
+          ]
+        }
+      ],
+      "version": "2.0"
+    }
+  ]
+}

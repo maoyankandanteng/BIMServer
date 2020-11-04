@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="53d8b7e6-c046-44c5-b6cd-23c7d9777c0c" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bvEu33Z6DAyx46TpM3SUKUMu9C" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="E:/IDEA/长兴公路/haokun-ui" />
+    <property name="ts.external.directory.path" value="D:\Develop\WebStorm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WebStorm\BIMServer\model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WebStorm\BIMServer\model" />
+      <recent name="E:\WebStorm\BIMServer\model\street" />
+      <recent name="E:\WebStorm\BIMServer\model\substation" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="53d8b7e6-c046-44c5-b6cd-23c7d9777c0c" name="Default Changelist" comment="" />
+      <created>1589504385760</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589504385760</updated>
+      <workItem from="1589504388042" duration="11103000" />
+      <workItem from="1589849674752" duration="599000" />
+      <workItem from="1589872404907" duration="4763000" />
+      <workItem from="1589953766017" duration="5274000" />
+      <workItem from="1589959903600" duration="172000" />
+      <workItem from="1589964591481" duration="2055000" />
+      <workItem from="1590373878398" duration="4492000" />
+      <workItem from="1590453599064" duration="16557000" />
+      <workItem from="1590626386803" duration="4116000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

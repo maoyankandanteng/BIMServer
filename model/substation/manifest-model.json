@@ -1,0 +1,299 @@
+{
+  "version": "1.0",
+  "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0",
+  "type": "manifest",
+  "progress": "complete",
+  "status": "success",
+  "hasThumbnail": "true",
+  "region": "US",
+  "derivatives": [
+    {
+      "outputType": "svf",
+      "status": "success",
+      "name": "input.rvt",
+      "hasThumbnail": "true",
+      "progress": "complete",
+      "children": [
+        {
+          "type": "resource",
+          "role": "Autodesk.CloudPlatform.PropertyDatabase",
+          "status": "success",
+          "mime": "application/autodesk-db",
+          "urn": "./model.sdb",
+          "guid": "5b1fe502-0ece-4847-8a9d-ddefa37ad817",
+          "size": 5869568
+        },
+        {
+          "type": "resource",
+          "role": "Autodesk.AEC.ModelData",
+          "status": "success",
+          "mime": "application/json",
+          "urn": "./AECModelData.json",
+          "guid": "b014b6f6-5d45-4489-bf7d-6494e0ca8dd3"
+        },
+        {
+          "type": "geometry",
+          "role": "3d",
+          "status": "success",
+          "name": "3d",
+          "hasThumbnail": "true",
+          "progress": "complete",
+          "guid": "cff423af-318b-46a2-b958-14a7292c3722",
+          "children": [
+            {
+              "type": "view",
+              "role": "3d",
+              "status": "success",
+              "name": "3d",
+              "progress": "complete",
+              "guid": "f56d6fdd-174f-47f1-bb04-26306b350931-000312cb",
+              "camera": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "type": "resource",
+              "role": "3d",
+              "mime": "application/autodesk-svf",
+              "urn": "./3d.svf",
+              "progress": "graphics",
+              "guid": "3c0ef2ec-2eb0-43ee-8ce3-691632219a33"
+            },
+            {
+              "type": "resource",
+              "role": "thumbnail",
+              "status": "success",
+              "mime": "image/png",
+              "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0/thumb100.png",
+              "resolution": [
+                100,
+                100
+              ],
+              "guid": "c9a8502e-2cbb-4a4c-a0a7-3e7e882cf27d"
+            },
+            {
+              "type": "resource",
+              "role": "thumbnail",
+              "status": "success",
+              "mime": "image/png",
+              "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0/thumb200.png",
+              "resolution": [
+                200,
+                200
+              ],
+              "guid": "9ba1cf87-68d8-409b-9670-c1e7ed928355"
+            },
+            {
+              "type": "resource",
+              "role": "thumbnail",
+              "status": "success",
+              "mime": "image/png",
+              "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0/thumb400.png",
+              "resolution": [
+                400,
+                400
+              ],
+              "guid": "59cc46f7-f0e9-4bd8-8a7f-f2d8b23d541e"
+            }
+          ],
+          "viewableID": "f56d6fdd-174f-47f1-bb04-26306b350931-000312cb"
+        },
+        {
+          "type": "geometry",
+          "role": "2d",
+          "status": "success",
+          "name": "A101 - 未命名",
+          "hasThumbnail": "true",
+          "progress": "complete",
+          "guid": "2fd1c920-0957-4f2e-95f8-96e81a7104ca-002aef87",
+          "objectIds": [
+            6,
+            7,
+            8,
+            9,
+            13,
+            16,
+            20,
+            21,
+            22,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            88,
+            92,
+            96,
+            97,
+            98,
+            99,
+            100
+          ],
+          "properties": {
+            "default": {
+              "viewType": "DrawingSheet",
+              "origin": "[0,0,0]",
+              "rightDirection": "[1,0,0]",
+              "upDirection": "[0,1,0]",
+              "viewDirection": "[0,0,1]"
+            }
+          },
+          "children": [
+            {
+              "type": "resource",
+              "role": "graphics",
+              "status": "success",
+              "mime": "application/autodesk-f2d",
+              "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0/f2d_图纸__A101_-_未命名/primaryGraphics.f2d",
+              "guid": "317e7c65-b126-4497-8cba-deb2af364dd8"
+            },
+            {
+              "type": "resource",
+              "role": "thumbnail",
+              "status": "success",
+              "mime": "image/png",
+              "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0/f2d_图纸__A101_-_未命名/thumb100.png",
+              "resolution": [
+                100,
+                100
+              ],
+              "guid": "04e41d6a-6e4f-4791-b241-fcebf2a609a8"
+            },
+            {
+              "type": "resource",
+              "role": "thumbnail",
+              "status": "success",
+              "mime": "image/png",
+              "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0/f2d_图纸__A101_-_未命名/thumb200.png",
+              "resolution": [
+                200,
+                200
+              ],
+              "guid": "35ad0c68-3317-46e1-85c9-594002a6a97a"
+            },
+            {
+              "type": "resource",
+              "role": "thumbnail",
+              "status": "success",
+              "mime": "image/png",
+              "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0/f2d_图纸__A101_-_未命名/thumb400.png",
+              "resolution": [
+                400,
+                400
+              ],
+              "guid": "2285c52b-4011-4280-a307-6d61dbb01612"
+            }
+          ],
+          "phaseNames": "",
+          "viewableID": "2fd1c920-0957-4f2e-95f8-96e81a7104ca-002aef87"
+        }
+      ]
+    },
+    {
+      "outputType": "thumbnail",
+      "status": "success",
+      "progress": "complete",
+      "children": [
+        {
+          "type": "resource",
+          "role": "thumbnail",
+          "status": "success",
+          "mime": "image/png",
+          "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0/thumb100.png",
+          "resolution": [
+            100,
+            100
+          ],
+          "guid": "435c4139-f59a-4474-beb9-809715fbd8e5"
+        },
+        {
+          "type": "resource",
+          "role": "thumbnail",
+          "status": "success",
+          "mime": "image/png",
+          "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0/thumb200.png",
+          "resolution": [
+            200,
+            200
+          ],
+          "guid": "af07bbb1-1286-4407-a116-bffeeeb888eb"
+        },
+        {
+          "type": "resource",
+          "role": "thumbnail",
+          "status": "success",
+          "mime": "image/png",
+          "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YmltYW5nbGUvaW5wdXQucnZ0/thumb400.png",
+          "resolution": [
+            400,
+            400
+          ],
+          "guid": "a5ced98a-0393-442f-b246-d95eaa313e26"
+        }
+      ]
+    }
+  ]
+}

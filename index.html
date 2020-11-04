@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no"/>
+    <title>BimAngle.com - Trial version</title>
+    <link rel="stylesheet" type="text/css"
+          href="https://developer.api.autodesk.com/modelderivative/v2/viewers/6.0/style.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/2.*/three.min.js"></script>
+    <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/6.0/viewer3D.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
+    <script src="./js/snap.svg.js"></script>
+    <script src="./js/keycodes.js"></script>
+</head>
+<body style="margin:0px">
+<div id="viewer-local"></div>
+
+<script>
+    //ENABLE_DEBUG = false;
+    var sampleData = {
+        marker: [
+            {x: -15.670678700134374, y: -19.15955950934743, z: -15.10626589444827},
+            {x: 1.4280766508347398, y: -10.722539369863014, z: -15.617648251890529},
+            {x: 0.8187465667724609, y: 20.152083119549403, z: -14.526663282211402}
+        ]
+    };
+    var config = {
+        extensions: [
+            "Autodesk.Viewing.ZoomWindow"
+        ],
+        disabledExtensions: {
+            measure: true,
+            section: false,
+        },
+        memory: {
+            limit: 32 * 1024    //32 GB
+        }
+    };
+
+    var element = document.getElementById('viewer-local');
+    var viewer = new Autodesk.Viewing.Private.GuiViewer3D(element, config);//带GUI界面工具栏的Viewer
+    // var viewer = new Autodesk.Viewing.Viewer3D(element, config);//不带工具栏的Viewer
+    // var viewer = new Autodesk.Viewing.Viewer3D(element, config);
+    var options = {
+        env: 'Local',
+        offline: 'true',
+        useADP: false
+    };
+
+    Autodesk.Viewing.Initializer(options, function () {
+
+        var startedCode = viewer.start();
+        if (startedCode > 0) {
+            console.error('Failed to create a Viewer: WebGL not supported.');
+            return;
+        }
+        let markerBtn = new Autodesk.Viewing.UI.Button('markerBtn'); //新增一个按钮
+
+        markerBtn.setToolTip('添加标识'); //鼠标放置按钮上方时的显示
+        markerBtn.container.children[0].innerHTML = '+'; //按钮上显示的内容
+        let subToolbar = new Autodesk.Viewing.UI.ControlGroup('custom-toolbar'); //按钮组
+        subToolbar.addControl(markerBtn); //将新的按钮放入到新增的按钮组中
+        viewer.toolbar.addControl(subToolbar); //将按钮组添加至控制栏中
+        markerBtn.onClick = function (e) {
+            // var isChecked = $("#markerBtn").hasClass("active");
+            // if (isChecked) {
+            //     $("#markerBtn").removeClass("active").addClass("inactive");
+            //     $(viewer.container).unbind("click");
+            // } else {
+            //     $("#markerBtn").removeClass("inactive").addClass("active");
+            //     $(viewer.container).bind("click", onMouseClick);
+            // }
+//             console.log("++++++++++")
+//             viewer.select(147,viewer.model,Autodesk.Viewing.SelectionMode.FIRST_OBJECT);
+//             // viewer.fitToView(147,viewer.model,true);
+//             var nav = viewer.navigation
+//             var pos = nav.getPosition();
+//             var target = nav.getTarget();
+//             var viewdir = new THREE.Vector3();
+//             viewdir.subVectors (pos, target).normalize();
+//
+// // zooms out by 100 along the view direction
+//             viewdir.multiplyScalar (1000)
+//             pos.add(viewdir)
+//             nav.setPosition(pos)
+// //
+// //
+//             viewer.utilities.transitionView(pos, new THREE.Vector3(0,0,0), 60, viewdir, viewdir, false, target)
+            viewer.select( [147]);
+            var box = viewer.utilities.getBoundingBox();
+            viewer.navigation.fitBounds(true,box,true);
+
+            //
+            // viewer.impl.selector.setSelection([147], viewer.model);
+            // viewer.fitToView(147);
+            // viewer.isolateById(147);
+
+
+        }
+        // let modelPath = "./model/substation/3d.svf";
+        // let modelPath = "./model/office/3D_View/3D/3d.svf";
+        let modelPath = "./model/hongxing/3d.svf";
+        viewer.loadModel(modelPath, {isAEC: true}, onLoadSuccess, onLoadError);
+
+    });
+
+    function onLoadSuccess(ev) {
+        if (sampleData && sampleData.marker.length > 0) {
+            for (let i = 0; i < sampleData.marker.length; i++) {
+                drawPushpin(sampleData.marker[i]);
+            }
+        }
+        viewer.impl.scene.name = "HK";
+        /*  viewer.getObjectTree(function success() {
+              console.log('SUCCESS');
+              var instanceTree = viewer.model.getData().instanceTree;
+              var allDbId = instanceTree.nodeAccess.dbIdToIndex;
+              //遍历instanceTree
+              for (var key in allDbId) {
+                  viewer.getProperties(allDbId[key], function (objProp) {
+                      console.log(objProp)
+                      // var componentName = objProp.name;
+                      // //工艺_设备_45561 [3315978]
+                      // //获取中括号中的后台id
+                      // //debugger;
+                      // var start = componentName.indexOf("[");
+                      // var end = componentName.indexOf("]");
+                      // if (start != undefined) {
+                      //     var componentId = componentName.substring(start + 1, end);
+                      //     dbid_selMap[componentId]= objProp.dbId;
+                      // }
+
+                  })
+              }
+              console.log(instanceTree)
+
+          })*/
+    }
+
+    viewer.addEventListener(Autodesk.Viewing.CAMERA_CHANGE_EVENT, onCameraChange);
+    viewer.addEventListener(Autodesk.Viewing.SELECTION_CHANGED_EVENT, onSelectionChange);
+
+    function onSelectionChange(event) {
+        console.log(event)
+        var id1 = 147;//dbId  Revit的绝对ID
+        var instanceTree = viewer.model.getData().instanceTree;
+        var fragmentList = viewer.model.getFragmentList();
+        var fragIds = [];
+        var bounds = new THREE.Box3();
+        var box = new THREE.Box3();
+      /*  instanceTree.enumNodeFragments(
+            parseInt(id1), (fragId) => {
+                fragIds.push(fragId)
+            });
+        var materialRed = new THREE.MeshPhongMaterial({
+            color: 0xFF0000,
+            specular: 0xEEABEE
+        });
+        fragIds.forEach((fragId) => {
+            fragmentList.setMaterial(fragId, materialRed);
+        });*/
+
+        instanceTree.enumNodeFragments(id1, function (fragId) {
+            console.log('fragId:' + fragId);
+
+            //某几何单元的全局坐标系包围盒
+            fragmentList.getWorldBounds(fragId, box);
+            //合并计算最终整个构件包围盒
+            bounds.union(box);
+
+            //某几何单元的全局坐标系变换矩阵
+            //从中读取平移或旋转数值
+            //由于构件的几何单元应该都是同步变换，所以这些矩阵初始值应该是一样的
+            var fm = new THREE.Matrix4();
+            fragmentList.getWorldMatrix(fragId,fm);
+            console.log('frag matrix:' + JSON.stringify(fm));
+        }, true)
+
+        //更新viewer
+        viewer.impl.invalidate(true, true, true);
+    }
+
+    function onLoadError(event) {
+        console.log('FAILED');
+    }
+
+    function onCameraChange(event) {
+        //find out all pushpin markups
+        var $eles = $("div[id^='mymk']");
+        var DOMeles = $eles.get();
+
+        for (var index in DOMeles) {
+            //get each DOM element
+            var DOMEle = DOMeles[index];
+            var divEle = $('#' + DOMEle.id);
+            //get out the 3D coordination
+            var val = divEle.data('3DData');
+            var pushpinModelPt = JSON.parse(val);
+            //get the updated screen point
+            var screenpoint = viewer.worldToClient(new THREE.Vector3(
+                pushpinModelPt.x,
+                pushpinModelPt.y,
+                pushpinModelPt.z,));
+            //update the SVG position.
+            divEle.css({
+                'left': screenpoint.x - pushpinModelPt.radius * 2,
+                'top': screenpoint.y - pushpinModelPt.radius
+            });
+        }
+    }
+
+    function onMouseClick(event) {
+        $("div[id^='mymk']").removeClass("checked").addClass("unchecked");
+
+        var screenPoint = {
+            x: event.clientX,
+            y: event.clientY
+        };
+
+        //get the selected 3D position of the object
+
+        //viewer canvas might have offset from the webpage.
+
+        let viewer_pos = viewer.container.getBoundingClientRect();
+        var hitTest = viewer.impl.hitTest(screenPoint.x - viewer_pos.x,
+            screenPoint.y - viewer_pos.y, true);
+
+        var hitTest = viewer.impl.hitTest(screenPoint.x, screenPoint.y, true);
+        if (hitTest) {
+            drawPushpin({
+                x: hitTest.intersectPoint.x,
+                y: hitTest.intersectPoint.y,
+                z: hitTest.intersectPoint.z
+            });
+        }
+    }
+
+    //generate a random id for each pushpin markup
+    function makeid() {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for (var i = 0; i < 5; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text;
+    }
+
+    function drawPushpin(pushpinModelPt) {
+        //convert 3D position to 2D screen coordination
+        var screenpoint = viewer.worldToClient(
+            new THREE.Vector3(pushpinModelPt.x,
+                pushpinModelPt.y,
+                pushpinModelPt.z,));
+
+        //build the div container
+        var randomId = makeid();
+        var htmlMarker = '<div id="mymk' + randomId + '" class="unchecked"></div>';
+        var parent = viewer.container
+        $(parent).append(htmlMarker);
+        $('#mymk' + randomId).css({
+            // 'pointer-events': 'none',
+            'width': '20px',
+            'height': '20px',
+            'position': 'absolute',
+            'overflow': 'visible'
+        });
+        let rad = repaintMarker("mymk" + randomId, false);
+
+        //set the position of the SVG
+        //adjust to make the circle center is the position of the click point
+        var $container = $('#mymk' + randomId);
+        $container.css({
+            'left': screenpoint.x - rad * 2,
+            'top': screenpoint.y - rad
+        });
+
+        //store 3D point data to the DOM
+        var div = $('#mymk' + randomId);
+        //add radius info with the 3D data
+        pushpinModelPt.radius = rad;
+        var storeData = JSON.stringify(pushpinModelPt);
+        div.data('3DData', storeData);
+        div.click(markerOnClick);
+    }
+
+    function markerOnClick(event) {
+        console.log(event);
+        let target = event.currentTarget;
+        let divId = target.id;
+        let isChecked = this.classList.contains("checked");
+        if (isChecked) {
+            this.className = "unchecked";
+            repaintMarker(divId, false);
+        } else {
+            this.className = "checked";
+            repaintMarker(divId, true);
+        }
+    }
+
+    function repaintMarker(id, isChecked) {
+        let suffix = id.replace("mymk");
+        $("#" + id).empty().append('<svg id="mysvg' + suffix + '" style="width: 40px; height: 40px;"></svg>')
+        var snap = Snap($('#mysvg' + suffix)[0]);
+        var rad = 12;
+        var circle = snap.paper.circle(14, 14, rad);
+        circle.attr({
+            fill: "#FF8888",
+            fillOpacity: 0.6,
+            stroke: isChecked ? "#0000FF" : "#FF0000",
+            strokeWidth: 3
+        });
+        return rad;
+    }
+
+    /**
+     * 键盘事件监听
+     */
+    $("html").keyup(function (e) {
+        if (e.keyCode == KEYCODES.DELETE) {
+            $("div[id^='mymk'].checked").unbind("click").remove();
+        }
+    });
+
+
+
+</script>
+</body>
+</html>
